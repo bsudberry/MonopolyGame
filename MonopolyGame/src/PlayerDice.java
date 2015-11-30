@@ -16,5 +16,9 @@ public class PlayerDice
 				total = Dice1+Dice2;
 				System.out.println("You rolled a "+ Dice1 + " and a "+ Dice2 +".  For a total of "+ total);
 			}
+		private static void PlayerMove()
+			{
+				
+			}
 
 	}

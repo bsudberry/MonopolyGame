@@ -56,9 +56,26 @@ public class MonopolyBoard
 					{
 					board [j]= " ";
 					System.out.println(properties);
+					}	
+			}
+		public void start(ArrayList<PlayerSpace> players)
+			{
+				for(int i = 0; i < players.size(); i++)
+					board[0].landed(players.get(i));
+			}
+		
+		public void movePlayer(PlayerSpace p, int total)
+			{
+				PlayerSpace temp = board[p.getLocation()].getPlayer(p);
+				int spot = temp.getLocation() + total;
+				if(spot >= 40)
+					{
+						spot -= 40;
+						System.out.println(p + " passed Go.");
 					}
-				
-				
+				temp.setLocation(spot);
+				board[spot].landed(temp);
+				System.out.println(board[spot]);
 			}
 
 	}
