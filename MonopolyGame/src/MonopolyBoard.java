@@ -1,16 +1,21 @@
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class MonopolyBoard
 	{
-		public static String [] board=new String [40];
-		static ArrayList <String> properties = new ArrayList <String>();
+		static ArrayList<String> properties = new ArrayList<String>();
+		
 		public static void main(String[] args)
-			{
+			{	
 				makeBoard();
+			
 			}
-		private static void makeBoard()
+		
+		static void makeBoard()
 			{
+				
 				properties.add("Go");
 				properties.add("Mediterranean Avenue");
 				properties.add("Community Chest");
@@ -54,28 +59,8 @@ public class MonopolyBoard
 				
 				for(int j=0;j<1;j++)
 					{
-					board [j]= " ";
+					//BoardSpace [j]= " ";
 					System.out.println(properties);
 					}	
 			}
-		public void start(ArrayList<PlayerSpace> players)
-			{
-				for(int i = 0; i < players.size(); i++)
-					board[0].landed(players.get(i));
-			}
-		
-		public void movePlayer(PlayerSpace p, int total)
-			{
-				PlayerSpace temp = board[p.getLocation()].getPlayer(p);
-				int spot = temp.getLocation() + total;
-				if(spot >= 40)
-					{
-						spot -= 40;
-						System.out.println(p + " passed Go.");
-					}
-				temp.setLocation(spot);
-				board[spot].landed(temp);
-				System.out.println(board[spot]);
-			}
-
 	}
