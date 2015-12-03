@@ -1,5 +1,5 @@
 
-public class Unownable  
+public class Unownable extends BoardSpace
 	{
 		protected static String name;
 		protected boolean canBuy;

@@ -8,7 +8,6 @@ static ArrayList<BoardSpace> properties = new ArrayList<BoardSpace>();
 		public static void main(String[] args)
 			{	
 				makeStarWarsBoard();
-			
 			}
 		
 		static void makeStarWarsBoard()
