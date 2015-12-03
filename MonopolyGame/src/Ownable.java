@@ -1,5 +1,10 @@
-public class Ownable extends BoardSpace
+public class Ownable 
 	{
+		protected static String name;
+		protected static int price;
+		protected boolean canBuy;
+		protected boolean purchased;
+		
 		public Ownable(String n, int p, boolean pu, boolean cb)
 			{
 				name=n;
@@ -7,4 +12,39 @@ public class Ownable extends BoardSpace
 				purchased=pu;
 				canBuy = cb;
 			}
+		
+		boolean isCanBuy()
+			{
+				return canBuy;
+			}
+		private void setCanBuy(boolean canBuy)
+			{
+				this.canBuy = canBuy;
+			}
+		boolean isPurchased()
+			{
+				return purchased;
+			}
+		void setPurchased(boolean purchased)
+			{
+				this.purchased = purchased;
+			}
+		int getPrice()
+			{
+				return price;
+			} 
+		private static void setPrice(int price)
+			{
+				.price = price;
+			}
+		public static String getName()
+			{
+				return name;
+			}
+		public void setName(String name)
+			{
+				this.name = name;
+			}
+		
+	
 	}
