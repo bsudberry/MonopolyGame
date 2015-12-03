@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class Introduction
 	{
-		 static String playOrNo;
+		static String playOrNo;
+		static String characterName;
 		static Scanner userInput = new Scanner(System.in);
 		public static void main(String[] args)
 			{
@@ -25,5 +26,5 @@ public class Introduction
 					System.exit(0);
 					}				
 			}
-
 	}
+

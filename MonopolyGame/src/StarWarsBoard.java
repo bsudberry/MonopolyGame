@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class StarWarsBoard
 	{
-static ArrayList<String> properties = new ArrayList<String>();
+static ArrayList<BoardSpace> properties = new ArrayList<BoardSpace>();
 		
 		public static void main(String[] args)
 			{	
@@ -14,51 +14,52 @@ static ArrayList<String> properties = new ArrayList<String>();
 		static void makeStarWarsBoard()
 			{
 				
-				properties.add("Go");
-				properties.add("Swamp - Dagobah");
-				properties.add("Rebel Scum");
-				properties.add("Yoda's Hut - Dagobah");
-				properties.add("Docking Tax");
-				properties.add("TIE Fighter");
-				properties.add("Echo Base - Hoth");
-				properties.add("Imperial Chance");
-				properties.add("Frozen Plains - Hoth");
-				properties.add("North Ridge - Hoth");
-				properties.add("CARBONATION ");
-				properties.add("Lars Homestead - Tatooine");
-				properties.add("Reactor Core");
-				properties.add("Mos Eisley");
-				properties.add("Yoda's Other Swamp - Tatooine");
-				properties.add("Millennium Falcon");
-				properties.add("War Room - Yavin Four");
-				properties.add("Rebel Scum");
-				properties.add("Massassi Temple - Yavin Four");
-				properties.add("Temple Throne Room - Yavin Four");
-				properties.add("Free Fighter Parking");
-				properties.add("Landos Platform - Cloud City");
-				properties.add("Imperial Chance");
-				properties.add("Carbon Freezing Chamber - Cloud City");
-				properties.add("Reactor Control Room - Cloud City");
-				properties.add("X-Wing Fighter");
-				properties.add("Landing Bay - Death Star");
-				properties.add("Throne Room - Death Star");
-				properties.add("Moisture Farm");
-				properties.add("Central Core - Death Star");
-				properties.add("It's a Trap!");
-				properties.add("Forest - Endor");
-				properties.add("Shield Generator - Endor");
-				properties.add("Rebel Scum");
-				properties.add("Shield Generator - Endor");
-				properties.add("Ewok Village - Endor");
-				properties.add("Star Destroyer");
-				properties.add("Imperial Chance");
-				properties.add("Monument Square - Coruscant");
-				properties.add("Imperial Palace - Coruscant");
-			
-				for(int j=0;j<1;j++)
+				properties.add(new Unownable ("GO",false));
+				properties.add(new Ownable("Naboo Swamps",60,false,true));
+				properties.add(new CommunityChestAndChance("Jedi",false));
+				properties.add(new Ownable("Naboo Plains",60,false,true));
+				properties.add(new Unownable("Trade Route Tax Pay 200 Credits ",false));
+				properties.add(new Ownable("Podracer Sebulba's",200,false,true));
+				properties.add(new Ownable("Trade Federation Battle Ship Hanger Bay",100,false,true));
+				properties.add(new CommunityChestAndChance("Sith",false));
+				properties.add(new Ownable("Trade Federation Battleship Conference Room",100,false,true));
+				properties.add(new Ownable("Trade Federation Battleship Control Center",120,false,true));
+				properties.add(new Unownable("In Jail/Just Visiting",false));
+				properties.add(new Ownable("Mos Espa Anakin's Room",140,false,true));
+				properties.add(new Ownable("Theed Power Generator",140,false,true));
+				properties.add(new Ownable("Mos Espa Watto's Junk Shop",140,false,true));
+				properties.add(new Ownable("Mos Espa Street Market",160,false,true));
+				properties.add(new Ownable("Podracer Gasgano's",200,false,true));
+				properties.add(new Ownable("Mos Espa Arena Watto's Box",180,false,true));
+				properties.add(new CommunityChestAndChance("Jedi",false));
+				properties.add(new Ownable("Mos Espa Arena Jabba's Box",180,false,true));
+				properties.add(new Ownable("Mos Espa Arena Starting Grid",200,false,true));
+				properties.add(new Unownable("Free Parking",false));
+				properties.add(new Ownable("Otoh Gunga Plaza",220,false,true));
+				properties.add(new CommunityChestAndChance("Sith",false));
+				properties.add(new Ownable("Otoh Gunga High Tower Board Room",220,false,true));
+				properties.add(new Ownable("Otoh Gunga Gungan Sub",240,false,true));
+				properties.add(new Ownable("Podracer Anakin's",200,false,true));
+				properties.add(new Ownable("Theed Energy Beem Hallway",260,false,true));
+				properties.add(new Ownable("Theed Generator Core",260,false,true));
+				properties.add(new Ownable("Moisture Farm",150,false,true));
+				properties.add(new Ownable("Theed Main Hanger",280,false,true));
+				properties.add(new Unownable("Go To Jail",false));
+				properties.add(new Ownable("Theed Palace Courtyard",300,false,true));
+				properties.add(new Ownable("Theed Palace Main Palace",300,false,true));
+				properties.add(new CommunityChestAndChance("Jedi",false));
+				properties.add(new Ownable("Theed Palace Throne Room",320,false,true));
+				properties.add(new Ownable("Podracer Cleggs's",200,false,true));
+				properties.add(new CommunityChestAndChance("Sith",false));
+				properties.add(new Ownable("Coruscant Galactic Senate",350,false,true));
+				properties.add(new Unownable("Blockade   Pay 75 Credits",false));
+				properties.add(new Ownable("Coruscant Jedi Council",400,false,true));
+				
+				for(BoardSpace object: properties)
 					{
-					//BoardSpace [j]= " ";
-					System.out.println(properties);
-					}	
+					  System.out.print(StarWarsBoard.properties);
+					}
 			}
+
+	
 	}
