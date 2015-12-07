@@ -6,7 +6,8 @@ public class MonopolyRunner
 		public static void main(String[] args)
 		{
 				Introduction.wouldYouLikeToPlay();
-				StarWarsBoard.makeStarWarsBoard();
+				StarWarsBoard e = new StarWarsBoard();
+				e.makeStarWarsBoard();
 				PlayerDice.moveSpace();
 		}
 		

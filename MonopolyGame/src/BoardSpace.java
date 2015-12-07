@@ -1,33 +1,41 @@
 
 public abstract class BoardSpace
 	{
-		protected static String name;
-		protected static int space;
-		
-
-		private static int getPrice()
+		protected String name;
+		protected  int price;
+		protected boolean canBuy;
+		protected boolean purchased;
+		int getPrice()
 			{
-				return getPrice();
+				return price;
 			}
-		private static void setPrice(int price)
+		private void setPrice(int price)
 			{
-				BoardSpace.price = price;
+				this.price = price;
 			}
-		public static String getName()
+		boolean isCanBuy()
+			{
+				return canBuy;
+			}
+		private void setCanBuy(boolean canBuy)
+			{
+				this.canBuy = canBuy;
+			}
+		boolean isPurchased()
+			{
+				return purchased;
+			}
+		void setPurchased(boolean purchased)
+			{
+				this.purchased = purchased;
+			}
+		public String getName()
 			{
 				return name;
 			}
 		public void setName(String name)
 			{
 				this.name = name;
-			}
-		public static int getSpace()
-			{
-				return space;
-			}
-		public void setSpace(int space)
-			{
-				this.space = space;
 			}
 
 	}

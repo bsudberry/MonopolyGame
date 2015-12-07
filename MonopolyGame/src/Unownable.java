@@ -1,13 +1,13 @@
 
 public class Unownable extends BoardSpace
 	{
-		protected static String name;
+		protected String name;
 		protected boolean canBuy;
 		
 		public Unownable(String n, boolean cb)
 			{
-				name=n;
-				canBuy = cb;
+				setName(n);
+				setCanBuy(cb);
 			}
 		
 		boolean isCanBuy()
@@ -18,7 +18,7 @@ public class Unownable extends BoardSpace
 			{
 				this.canBuy = canBuy;
 			}
-		public static String getName()
+		public String getName()
 			{
 				return name;
 			}

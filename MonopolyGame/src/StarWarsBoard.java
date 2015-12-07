@@ -3,14 +3,10 @@ import java.util.ArrayList;
 
 public class StarWarsBoard
 	{
-static ArrayList<BoardSpace> properties = new ArrayList<BoardSpace>();
+public ArrayList<BoardSpace> properties = new ArrayList<BoardSpace>();
 		
-		public static void main(String[] args)
-			{	
-				makeStarWarsBoard();
-			}
 		
-		static void makeStarWarsBoard()
+		public void makeStarWarsBoard()
 			{
 				
 				properties.add(new Unownable ("GO",false));
@@ -56,8 +52,9 @@ static ArrayList<BoardSpace> properties = new ArrayList<BoardSpace>();
 				
 				for(BoardSpace object: properties)
 					{
-					  System.out.print(StarWarsBoard.properties);
+					  System.out.print(object.getName());
 					}
+				
 			}
 
 	
