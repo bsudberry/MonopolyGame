@@ -18,12 +18,4 @@ public class Unownable extends BoardSpace
 			{
 				this.canBuy = canBuy;
 			}
-		public String getName()
-			{
-				return name;
-			}
-		public void setName(String name)
-			{
-				this.name = name;
-			}
 	}

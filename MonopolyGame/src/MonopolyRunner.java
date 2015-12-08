@@ -5,10 +5,25 @@ public class MonopolyRunner
 		static Scanner userInput = new Scanner(System.in);
 		public static void main(String[] args)
 		{
+		System.out.println("Hello would you rather like to play Star Wars Edition Monopoly or Regular Monopoly?");
+		System.out.println(" (1) Star Wars Edition");
+		System.out.println(" (2) Regular Edition");
+		int choice = userInput.nextInt();
+		if (choice == 1)
+			{
 				Introduction.wouldYouLikeToPlay();
 				StarWarsBoard e = new StarWarsBoard();
 				e.makeStarWarsBoard();
 				PlayerDice.moveSpace();
+			}
+		if (choice == 2) 
+			{
+			Introduction.wouldYouLikeToPlay();
+			MonopolyBoard a = new MonopolyBoard();
+			a.makeBoard();
+			RegularEditionMonopolyPlayer.moveSpace();
+			}				
+				
 		}
 		
 	}

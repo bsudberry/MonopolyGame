@@ -1,7 +1,6 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
-public class PlayerDice
+public class RegularEditionMonopolyPlayer
 	{
 		
 		static Scanner Player=new Scanner(System.in);
@@ -41,25 +40,25 @@ public class PlayerDice
 							{
 								Player.nextLine();
 								Position=(Position+rollDice)%40;
-								System.out.println("You Rolled a "+rollDice+", You Landed on "+StarWarsBoard.properties.get(Position).getName());	
+								System.out.println("You Rolled a "+rollDice+", You Landed on "+MonopolyBoard.properties.get(Position).getName());	
 							}
-						if(StarWarsBoard.properties.get(Position).isCanBuy() == true)
+						if(MonopolyBoard.properties.get(Position).isCanBuy() == true)
 							{
-								if(StarWarsBoard.properties.get(Position).isPurchased() == false) 
+								if(MonopolyBoard.properties.get(Position).isPurchased() == false) 
 									{
-										System.out.println("Buy " + StarWarsBoard.properties.get(Position).getName() + " for $" + StarWarsBoard.properties.get(Position).getPrice());
+										System.out.println("Buy " + MonopolyBoard.properties.get(Position).getName() + " for $" + MonopolyBoard.properties.get(Position).getPrice());
 										System.out.println("Press 1 to buy, 2 to pass");
 										if(Player.nextInt() == 1) 
 											{
-												if(Credits >= StarWarsBoard.properties.get(Position).getPrice())
+												if(Credits >= MonopolyBoard.properties.get(Position).getPrice())
 													{
-														StarWarsBoard.properties.get(Position).setPurchased(true);
-														Credits -= StarWarsBoard.properties.get(Position).getPrice();
+														MonopolyBoard.properties.get(Position).setPurchased(true);
+														Credits -= MonopolyBoard.properties.get(Position).getPrice();
 														//System.out.println("You bought " + StarWarsBoard.properties.get(0).getName());
 														System.out.println("Your balance is " + Credits+" Credits");
 														System.out.println(" ");
 														System.out.println("Your Properties:");
-														ownedProp.add(new String(StarWarsBoard.properties.get(Position).getName()));
+														ownedProp.add(new String(MonopolyBoard.properties.get(Position).getName()));
 														for(String myProp: ownedProp) 
 															{
 																System.out.println(myProp);
@@ -101,4 +100,3 @@ public class PlayerDice
 					}
 			}
 	}
-		

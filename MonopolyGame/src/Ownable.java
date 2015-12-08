@@ -12,14 +12,6 @@ public class Ownable extends BoardSpace
 				setPurchased(pu);
 				setCanBuy(cb);
 			}
-		public String getName()
-			{
-				return name;
-			}
-		public void setName(String name)
-			{
-				this.name = name;
-			}
 		boolean isCanBuy()
 			{
 				return canBuy;
