@@ -11,6 +11,7 @@ public class MonopolyRunner
 		int choice = userInput.nextInt();
 		if (choice == 1)
 			{
+				System.out.println("You begin the game with 1500 credits." );
 				Introduction.wouldYouLikeToPlay();
 				StarWarsBoard e = new StarWarsBoard();
 				e.makeStarWarsBoard();
@@ -18,6 +19,7 @@ public class MonopolyRunner
 			}
 		if (choice == 2) 
 			{
+			System.out.println("Your begin the game with 1500 credits." );
 			Introduction.wouldYouLikeToPlay();
 			MonopolyBoard a = new MonopolyBoard();
 			a.makeBoard();
