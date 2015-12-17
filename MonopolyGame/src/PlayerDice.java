@@ -6,10 +6,12 @@ public class PlayerDice
 		
 		static Scanner Player=new Scanner(System.in);
 		public static boolean playerMove=true;
+		public static boolean isInJail=false;
 		static int rollDice;
 		static int Dice1;
 		static int Dice2;
 		static int Position=0;
+		static boolean inJail;
 		static int price;
 		static int Credits=1500;
 		static ArrayList<String>ownedProp = new ArrayList<String>();
@@ -22,8 +24,8 @@ public class PlayerDice
 			{
 				while(playerMove)
 					{
-						Dice1=((int)(Math.random()*6)+1);
-						Dice2=((int)(Math.random()*6)+1);
+						Dice1=((int)(Math.random()*0)+5);
+						Dice2=((int)(Math.random()*0)+5);
 						rollDice=Dice1+Dice2;
 						if((Position + rollDice) >= 40) 
 							{
@@ -43,6 +45,27 @@ public class PlayerDice
 								Position=(Position+rollDice)%40;
 								System.out.println("You Rolled a "+rollDice+", You Landed on "+StarWarsBoard.properties.get(Position).getName());	
 							}
+						if(Position == 10) 
+							{
+								while(Player.hasNextLine())
+											{
+												Player.nextLine();
+												Position=(Position-rollDice+40)%40;
+												System.out.println("You Rolled a "+rollDice+", You Landed on "+StarWarsBoard.properties.get(Position).getName());	
+													if(Position ==10)
+														{
+															while(Player.hasNextLine())
+																{
+																	Player.nextLine();
+																	Position=(Position+rollDice)%40;
+																	System.out.println("You Rolled a "+rollDice+", You Landed on "+StarWarsBoard.properties.get(Position).getName());
+																}
+														}
+					
+											}
+								
+							} 
+						
 						if(StarWarsBoard.properties.get(Position).isCanBuy() == true)
 							{
 								if(StarWarsBoard.properties.get(Position).isPurchased() == false) 
@@ -55,7 +78,6 @@ public class PlayerDice
 													{
 														StarWarsBoard.properties.get(Position).setPurchased(true);
 														Credits -= StarWarsBoard.properties.get(Position).getPrice();
-														//System.out.println("You bought " + StarWarsBoard.properties.get(0).getName());
 														System.out.println("Your balance is " + Credits+" Credits");
 														System.out.println(" ");
 														System.out.println("Your Properties:");
@@ -73,18 +95,6 @@ public class PlayerDice
 											} 
 										
 									}
-								else if(Position == 4) 
-									{
-										if(Credits >= 200) 
-											{
-												Credits -= 200;
-												System.out.println("You paid 200 Credits for Income Tax");
-											} 
-										else 
-											{
-												System.out.println("You do not have enough money to pay for Income Tax");
-											}
-									} 
 								else if(Position == 38)
 									{
 										if(Credits >= 75)

@@ -21,8 +21,8 @@ public class RegularEditionMonopolyPlayer
 			{
 				while(playerMove)
 					{
-						Dice1=((int)(Math.random()*6)+1);
-						Dice2=((int)(Math.random()*6)+1);
+						Dice1=((int)(Math.random()*0)+5);
+						Dice2=((int)(Math.random()*0)+5);
 						rollDice=Dice1+Dice2;
 						if((Position + rollDice) >= 40) 
 							{
@@ -42,6 +42,26 @@ public class RegularEditionMonopolyPlayer
 								Position=(Position+rollDice)%40;
 								System.out.println("You Rolled a "+rollDice+", You Landed on "+MonopolyBoard.properties.get(Position).getName());	
 							}
+						if(Position == 10) 
+							{
+								while(Player.hasNextLine())
+											{
+												Player.nextLine();
+												Position=(Position-rollDice+40)%40;
+												System.out.println("You Rolled a "+rollDice+", You Landed on "+MonopolyBoard.properties.get(Position).getName());	
+													if(Position ==10)
+														{
+															while(Player.hasNextLine())
+																{
+																	Player.nextLine();
+																	Position=(Position+rollDice)%40;
+																	System.out.println("You Rolled a "+rollDice+", You Landed on "+MonopolyBoard.properties.get(Position).getName());
+																}
+														}
+					
+											}
+								
+							} 
 						if(MonopolyBoard.properties.get(Position).isCanBuy() == true)
 							{
 								if(MonopolyBoard.properties.get(Position).isPurchased() == false) 
